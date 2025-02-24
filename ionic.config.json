@@ -1,0 +1,7 @@
+{
+  "name": "ecobkt",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
