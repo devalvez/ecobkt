@@ -1,0 +1,12 @@
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #FFFFFF;
+}
+
+@media (min-width: 768px) {
+  .container {
+    background-image: linear-gradient(to bottom, #440e10, #b12429, #ba262b);
+  }
+}

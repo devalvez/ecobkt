@@ -1,0 +1,58 @@
+<ion-menu [type]="menuType" content-id="main-content" side="end">
+  <ion-header>
+    <ion-toolbar>
+      <small>MENU</small>
+
+      <ion-menu-button slot="end"></ion-menu-button>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item>
+        <a href="">
+          Meu Perfil
+        </a>
+      </ion-item>
+      <ion-item>
+        <a href="">
+          Minhas Viagens
+        </a>
+      </ion-item>
+      <ion-item>
+        <a href="">
+          Meus Endereços
+        </a>
+      </ion-item>
+      <ion-item>
+        <a href="">
+          Suporte
+        </a>
+      </ion-item>
+      <ion-item>
+        <a href="">
+          <ion-icon name="person" color="secondary"></ion-icon>
+          Pagamentos
+        </a>
+      </ion-item>
+      <ion-item>
+        <a href="">
+          Agendamentos
+        </a>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <img class="logo" src="/assets/images/logo-light.svg" alt="logo-light.svg"/>      
+        <ion-menu-button slot="end"></ion-menu-button>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    
+    <ng-content></ng-content>
+    
+  </ion-content>
+</div>

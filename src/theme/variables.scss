@@ -1,2 +1,74 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+
+:root {
+  // Colors
+  --gray: #e9e9e9;
+  --gray-medium: #404040;
+  --ion-color-primary: #BC262B;
+  --ion-color-secondary: #000000;
+
+  --bg-header-linear-gradient: linear-gradient(
+    to right,
+    #b12429,
+    #b12429,
+    #ba262b
+  );
+
+  // Deinitions
+  --input-background: var(--gray);
+}
+
+.error {
+  font-style: italic;
+  font-size: 14px;
+  color: #FF3300;
+}
+
+ion-label {
+  font-weight: bold;
+  color: #606060;
+}
+
+ion-button {
+  text-transform: none;
+}
+
+input.custom {
+  width: 100%;
+  font-size: 18px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  color: var(--gray-medium);
+  border: 2px solid transparent;
+  outline: 2px solid transparent;
+  background-color: var(--input-background);
+}
+input.custom:focus {
+  border: 2px solid #FFFFFF;
+  outline: 2px solid #80808066;
+}
+ion-button.custom {
+  display: flex;
+  width: 100%;
+}
+ion-button {
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+}
+
+ion-checkbox.rounded {
+  --size: 24px;
+  --border-radius: 50%;
+  --background: #fff;
+  --border-color: #ccc;
+}
+
+.rounded::part(container) {
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.rounded::part(mark) {
+  border-radius: 50%;
+}

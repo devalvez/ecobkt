@@ -1,0 +1,307 @@
+.welcome-card {
+  display: flex;
+  padding: 0px 16px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
+
+  h3 {
+    margin-bottom: 0px;
+    margin-bottom: 5px;
+  }
+  p {
+    margin-top: 0px;
+  }
+}
+
+.travel {
+  display: none;
+}
+
+.travel-mobile {
+  gap: 16px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  padding: 24px 32px 24px 32px;
+}
+.travel-mobile .item {
+  display: flex;
+  flex-direction: column;
+}
+.travel-mobile .item::after {
+  display: flex;
+  content: "";
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  left: 10px;
+  margin-top: 18px;
+  border-radius: 8px;
+  border: 1px solid #ffffff;
+  outline: 1px solid #808080;
+  background: #808080;
+}
+.travel-mobile .item::before {
+  content: "";
+  position: absolute;
+  border-left: 1px solid #909090;
+  height: 56px;
+  left: 14px;
+  margin-top: 22px;
+}
+.travel-mobile .item:last-child::before {
+  border: none;
+}
+.travel-mobile .item:first-child::after {
+  border-radius: 0px;
+}
+
+ion-content::part(backgrond) {
+  border: 1px solid red;
+  box-shadow: -10px -10px 15px rgba(0, 0, 0, 0.3);
+}
+.modal-content {
+  padding: 24px 0px;
+}
+
+.add-button {
+  position: absolute;
+  margin-top: 1px;
+  right: 0;
+  display: flex;
+  width: 42px;
+  height: 42px;
+  font-size: 24px;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+}
+.car-preview {
+  width: 120px;
+  height: 120px;
+}
+.travel-details {
+  display: flex;
+  flex-direction: column;
+}
+
+// Travel Modal
+.modal-travel-details {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+.vehicle-info {
+  display: flex;
+}
+.payment-option {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 16px;
+  margin-bottom: 24px;
+
+  .payment-label {
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 24px;
+    color: var(--ion-color-primary);
+  }
+
+  ion-item {
+    --border-width: 0px;
+    --inner-border-width: 0px;
+    border: none; /* Remove qualquer borda extra */
+    box-shadow: none; /* Remove sombras que podem parecer bordas */
+  }
+
+  ion-select {
+    --background: #f0f0f0; /* Cor de fundo */
+    --placeholder-color: #888; /* Cor do placeholder */
+    --color: #333; /* Cor do texto */
+    --border-radius: 28px; /* Borda arredondada */
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --padding-top: 2px;
+    --padding-bottom: 2px;
+  }
+}
+.travel-control {
+  gap: 24px;
+  display: flex;
+  flex-direction: column;
+
+  .form-control {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+  }
+  .form-control:first-child {
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+  }
+}
+.actions {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  margin-top: 10px;
+  flex-direction: row;
+  ion-button {
+    width: 100%;
+  }
+}
+
+//Modal Search
+.modal-search {
+  display: flex;
+  padding: 24px;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+
+  .find-drive {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+//Modal modal-driver-details
+
+.modal-driver-details {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 10px 0px;
+
+  .drive-avatar {
+    width: 96px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  .driver-profile {
+    display: flex;
+    ul {
+      list-style: none;
+      .vehicle {
+        margin-top: 10px;
+      }
+      .plate {
+        display: flex;
+        margin-top: 5px;
+        justify-content: center;
+        border: 2px solid #aaa;
+        border-radius: 4px;
+      }
+    }
+  }
+  .status {
+    text-align: center;
+    .loader-status {
+      display: flex;
+      gap: 10px;
+      list-style: none;
+      align-items: center;
+      flex-direction: row;
+
+      li {
+        width: 100%;
+        height: 6px;
+        border-radius: 5px;
+        background-color: #aaaaaa;
+      }
+      .active {
+        background: var(--ion-color-primary);
+      }
+    }
+  }
+
+  ion-button {
+    margin-top: 24px;
+    display: flex;
+    width: 100%;
+  }
+}
+
+
+// Modal rate-content
+.rate-content {
+  display: flex;
+  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (min-width: 768px) {
+  .welcome-card {
+    display: flex;
+    padding: 0px 16px;
+    position: absolute; 
+    top: 24px;
+    left: 24px;
+    width: 400px;
+    border-radius: 8px;
+    flex-direction: column;
+    border: 1px solid #e9e9e9;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .travel-mobile {
+    display: none;
+  }
+
+  .modal-mobile {
+    display: none;
+  }
+
+  .travel {
+    gap: 10px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    padding: 4px 24px 24px 32px;
+  }
+  .travel .item {
+    display: flex;
+    flex-direction: column;
+  }
+  .travel .item::after {
+    display: flex;
+    content: "";
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    left: 10px;
+    margin-top: 18px;
+    border-radius: 0px;
+    border: 1px solid #ffffff;
+    outline: 1px solid #808080;
+    background: #808080;
+  }
+  .travel .item::before {
+    content: "";
+    position: absolute;
+    border-left: 1px solid #909090;
+    height: 56px;
+    left: 14px;
+    margin-top: 20px;
+  }
+  .travel .item:last-child::before {
+    border: none;
+  }
+  .travel .item:first-child::after {
+    border-radius: 8px;
+  }
+}

@@ -1,0 +1,16 @@
+<ion-modal
+    #travelModal
+    class="modal-mobile"
+    isOpen="true"
+    trigger="open-modal"
+    [backdropDismiss]="false"
+    [initialBreakpoint]="0.25"
+    [breakpoints]="[0.25, 0.95]"
+    
+  >
+    <ng-template>
+
+      <ng-content></ng-content>
+
+    </ng-template>
+  </ion-modal>

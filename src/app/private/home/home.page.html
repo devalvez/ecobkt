@@ -1,0 +1,256 @@
+<app-main-layout>
+  <div class="welcome-card">
+    <h3>Seja bem vindo(a)!</h3>
+    <p>Natália Gonçalves</p>
+
+    <hr />
+
+    <div class="travel">
+      <div class="item">
+        <input
+          class="custom"
+          placeholder="Local de partida"
+          [(ngModel)]="travel.starting"
+        />
+      </div>
+      <div class="item">
+        <input
+          class="custom"
+          placeholder="Local de destino"
+          autofocus
+          [ngModel]="travel.finishing"
+        />
+      </div>
+    </div>
+  </div>
+
+  <ion-modal
+    #travelModal
+    class="modal-mobile"
+    isOpen="false"
+    trigger="open-modal"
+    [backdropDismiss]="false"
+    [initialBreakpoint]="0.25"
+    [breakpoints]="[0.25, 0.95]"
+  >
+    <ng-template>
+      <div class="modal-content">
+        <div class="travel-mobile">
+          <div class="item">
+            <input
+              type="search"
+              class="custom"
+              placeholder="Local de partida"
+              [(ngModel)]="travel.starting"
+              (click)="travelModal.setCurrentBreakpoint(0.95)"
+            />
+
+            <button class="add-button">+</button>
+          </div>
+
+          @if(travel.stops.length > 0) {
+          <div class="item" key="index" *ngFor="let i of travel.stops">
+            <input
+              type="search"
+              class="custom"
+              [ngModel]="travel.finishing"
+              placeholder="Local de destino"
+              autofocus
+            />
+          </div>
+          }
+
+          <div class="item">
+            <input
+              (click)="travelModal.setCurrentBreakpoint(0.95)"
+              type="search"
+              class="custom"
+              [ngModel]="travel.finishing"
+              placeholder="Local de destino"
+              autofocus
+            />
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal
+    #driveModal
+    class="modal-mobile"
+    isOpen="false"
+    trigger="open-modal"
+    [backdropBreakpoint]="0.40"
+    [backdropDismiss]="false"
+    [initialBreakpoint]="0.40"
+    [breakpoints]="[0.40, 0.95]"
+  >
+    <ng-template>
+      <div class="modal-travel-details">
+        <div>
+          <small>Serviços disponíveis na sua região: </small>
+        </div>
+        <div class="vehicle-info">
+          <div>
+            <img
+              class="car-preview"
+              src="/assets/images/example.png"
+              alt="example.png"
+            />
+          </div>
+          <div>
+            <div class="travel-control">
+              <div class="travel-details">
+                <h4>BYD mini Dolphin</h4>
+                <span>até 4 passageiros</span>
+                <div class="payment-option">
+                  <h2>R$ 14,85</h2>
+
+                  <ion-list>
+                    <small class="payment-label" text="primary"
+                      >Método de pagamento</small
+                    >
+                    <ion-item>
+                      <ion-select aria-label="Favorite Fruit" value="apple">
+                        <ion-select-option value="apple"
+                          >Cartão de crédito</ion-select-option
+                        >
+                        <ion-select-option value="banana"
+                          >Cartão de débito</ion-select-option
+                        >
+                        <ion-select-option value="orange"
+                          >Pix</ion-select-option
+                        >
+                      </ion-select>
+                    </ion-item>
+                  </ion-list>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="form-control">
+          <div>
+            <input class="custom" placeholder="Endereço de destino" />
+          </div>
+
+          <div class="actions">
+            <ion-button>Agendar</ion-button>
+            <ion-button color="secondary">Pedir Corrida</ion-button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ion-modal>
+
+
+  <ion-modal
+    #searchModal
+    class="modal-mobile"
+    isOpen="false"
+    trigger="open-modal"
+    [backdropBreakpoint]="0.40"
+    [backdropDismiss]="false"
+    [initialBreakpoint]="0.40"
+    [breakpoints]="[0.40, 0.95]"
+  >
+    <ng-template>
+      <div class="modal-search">
+        <span>Procurnado motoristas próximos de você</span>
+
+        <div class="find-drive">
+          <img src="/assets/images/map.png" alt="map.png" />
+        </div>
+
+      </div>
+    </ng-template>
+  </ion-modal>
+
+
+
+  <ion-modal
+    #driverModal
+    class="modal-mobile"
+    isOpen="false"
+    trigger="open-modal"
+    [backdropBreakpoint]="0.40"
+    [backdropDismiss]="false"
+    [initialBreakpoint]="0.40"
+    [breakpoints]="[0.40, 0.95]"
+  >
+    <ng-template>
+      <div class="modal-driver-details">
+        <div>
+          <span>Encontramos o motorista mais indicado para você: </span>
+        </div>
+        <div class="driver-profile">
+          <div>
+            <img class="drive-avatar" src="http://www.tekoway.com/wp-content/uploads/2018/12/John-Doe.jpg" alt="johndoe" />
+          </div>
+          <div>
+            <ul>
+              <li>Alex Oliveira</li>
+              <li>
+                <small>25 corridas realizadas</small>
+              </li>
+              <li class="vehicle"><strong>Carro:</strong> BYD Mini Dolphin</li>
+              <li class="plate"><strong>Placa:</strong> BFW2I18</li>
+            </ul>
+          </div>
+        </div>
+        <div class="status">
+          @if(!travelStarted) {
+          <small>Chegará daqui 3 minutos 20 segundos.</small>
+          <ul class="loader-status">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        }
+          
+          @if(travelStarted) {
+            <ion-button color="secondary">Compartilhar a Corrida</ion-button>
+          }
+
+          @if(!travelStarted) {
+            <ion-button color="secondary">Cancelar</ion-button>
+          }
+          
+        </div>
+      </div>
+    </ng-template>
+  </ion-modal>
+
+
+  <ion-modal
+    #ratesModal
+    class="modal-mobile"
+    isOpen="true"
+    trigger="open-modal"
+    [backdropBreakpoint]="0.40"
+    [backdropDismiss]="false"
+    [initialBreakpoint]="0.40"
+    [breakpoints]="[0.40, 0.95]"
+  >
+    <ng-template>
+      <div class="rate-content">
+
+          <ion-icon name="star"></ion-icon>
+          
+          <ul>
+            <li><strong>Conhece o caminho </strong> </li>
+            <li><strong>Carro limpo </strong>  </li>
+            <li><strong>Motorista educado </strong>  </li>
+            <li><strong>Ar condicionado </strong>  </li>
+          </ul>
+        
+          <ion-button color="secondary">Enviar Avalição</ion-button>
+          
+      </div>
+    </ng-template>
+  </ion-modal>
+
+
+</app-main-layout>
